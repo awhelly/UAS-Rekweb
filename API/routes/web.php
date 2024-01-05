@@ -22,11 +22,13 @@ $router->group(['middleware' => 'basicAuth'], function() use ($router){
     $router->get('/kategori','KategoriController@index');
     $router->post('/kategori','KategoriController@create');
     $router->get('/kategori/{id}','KategoriController@detail');
+    $router->get('/kategori/{id}/produk','KategoriController@count');
     $router->put('/kategori/{id}','KategoriController@update');
     $router->delete('/kategori/{id}','KategoriController@delete');
     $router->get('/getkategori','KategoriController@getkategori');
 
     $router->get('/produk','ProdukController@index');
+    $router->get('/produk/{id}/count','ProdukController@count');
     $router->post('/produk','ProdukController@create');
     $router->get('/produk/{id}','ProdukController@detail');
     $router->put('/produk/{id}','ProdukController@update');
@@ -38,6 +40,8 @@ $router->group(['middleware' => 'basicAuth'], function() use ($router){
     $router->put('/cart/{id}','CartController@update');
     $router->delete('/cart/{id}','CartController@delete');
     $router->put('/cart/{id}/bayar','CartController@bayar');
+    $router->get('/cart-daycount','CartController@daycount');
+    $router->get('/cart-terbaru','CartController@terbaru');
 
     $router->get('/cartdetail','CartDetailController@index');
     $router->post('/cartdetail','CartDetailController@create');

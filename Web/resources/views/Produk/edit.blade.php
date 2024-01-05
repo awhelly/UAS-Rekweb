@@ -14,7 +14,7 @@
 		@endforeach
 		@endif
 		<!-- BEGIN: Form Layout -->
-		<form action="{{ route('produk-update',$data['id']) }}" method='POST'>
+		<form action="{{ route('produk-update',$data) }}" method='POST'>
 			@csrf
 			@method("put")
 			<div class="intro-y box p-5">

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Cart;
 use App\Models\CartDetail;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 
 class CartController extends Controller
 {
@@ -93,5 +94,20 @@ class CartController extends Controller
           'message' => 'Data gagal diupdate'
         ], 400);
       }
+    }
+    public function daycount()
+    {
+      $jumlah = Cart::whereDate('created_at', '>=', Carbon::today())->count();
+      return $jumlah;
+    }
+    public function terbaru()
+    {
+      $data = Cart::where('status_cart', 'open')->orderBy('created_at','desc')->first();
+      if($data){
+        $data = $data;
+      } else {
+        $data['id'] = 0;
+      }
+      return $data;
     }
   }

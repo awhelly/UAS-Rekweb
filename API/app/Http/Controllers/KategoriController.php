@@ -3,13 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\Kategori;
+use App\Models\Produk;
 use Illuminate\Http\Request;
 
 class KategoriController extends Controller
 {
     public function index()
     {
-      $kategori = Kategori::all();
+      $kategori = Kategori::where('status','Publish')->get();
       return response()->json($kategori);
     }
     public function create(Request $request)
@@ -61,5 +62,10 @@ class KategoriController extends Controller
     {
       $kategori = Kategori::where('status','Publish')->get();
       return response()->json($kategori);
+    }
+    public function count($id)
+    {
+      $jumlah = Produk::where('status','Publish')->where('kategori_id',$id)->count();
+      return $jumlah;
     }
   }

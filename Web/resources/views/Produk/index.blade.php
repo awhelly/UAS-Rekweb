@@ -20,28 +20,22 @@
 				<thead>
 					<tr>
 						<th class="whitespace-nowrap">ID</th>
-						<th class="whitespace-nowrap">Nama Produk</th>
 						<th class="text-center whitespace-nowrap">Kode</th>
-						<th class="text-center whitespace-nowrap">Deskripsi</th>
+						<th class="whitespace-nowrap">Nama Produk</th>
+						<th class="whitespace-nowrap">Deskripsi</th>
 						<th class="text-center whitespace-nowrap">ACTIONS</th>
 					</tr>
 				</thead>
 				<tbody>
 					@foreach ($data as $value)
 					<tr class="intro-x">
-						<td class="w-40">
-							<div class="flex">
-								<div class="w-10 h-10 image-fit zoom-in">
-									{{ $value['id'] }}
-								</div>
-							</div>
-						</td>
+						<td class="w-10">{{ $value['id'] }}</td>
 						<td>
-							<div class="text-slate-500">{{ $value['kode'] }}</div>
+							<div class="text-slate-500 text-center">{{ $value['kode'] }}</div>
 						</td>
-						<td class="text-center">{{ $value['nama'] }}</td>
+						<td>{{ $value['nama'] }}</td>
 						<td class="">
-							<div class="flex items-center justify-center {{ $value['deskripsi'] }}">
+							<div class="flex {{ $value['deskripsi'] }}">
 								{{ $value['deskripsi'] }}
 							</div>
 						</td>

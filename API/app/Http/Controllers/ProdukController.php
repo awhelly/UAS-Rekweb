@@ -61,4 +61,9 @@ class ProdukController extends Controller
         ], 200);
       }
     }
+    public function count()
+    {
+      $jumlah = Produk::where('status','Publish')->count();
+      return $jumlah;
+    }
   }

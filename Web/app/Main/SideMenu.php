@@ -16,7 +16,6 @@ class SideMenu {
 				'title' => 'Penjualan',
 				'route_name' => 'cart-index',
 				'params' => [
-					'layout' => 'side-menu',
 				],
 			],
 			'kategori' => [
@@ -24,7 +23,6 @@ class SideMenu {
 				'title' => 'Kategori',
 				'route_name' => 'kategori-index',
 				'params' => [
-					'layout' => 'side-menu',
 				],
 			],
 			'produk' => [
@@ -32,7 +30,6 @@ class SideMenu {
 				'title' => 'Produk',
 				'route_name' => 'produk-index',
 				'params' => [
-					'layout' => 'side-menu',
 				],
 			],
 		];
